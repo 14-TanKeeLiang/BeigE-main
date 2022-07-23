@@ -46,4 +46,13 @@ public class SongCollection {
             return currentSongIndex +1;
         }
     }
+
+    public int getPrevSong(int currentSongIndex){
+        if(currentSongIndex <= 0){
+            return currentSongIndex;
+        }
+        else {
+            return currentSongIndex -1;
+        }
+    }
 }

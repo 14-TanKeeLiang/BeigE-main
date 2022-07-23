@@ -96,4 +96,18 @@ public class PlaySongActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void playNext(View view) {
+        currentIndex = songCollection.getNextSong(currentIndex);
+        Toast.makeText(this, "The current index is now " + currentIndex, Toast.LENGTH_SHORT).show();
+        displaySongBasedOnIndex(currentIndex);
+        playSong(fileLink);
+    }
+
+    public void playPrevious(View view) {
+        currentIndex = songCollection.getPrevSong(currentIndex);
+        Toast.makeText(this, "The current index is now " + currentIndex, Toast.LENGTH_SHORT).show();
+        displaySongBasedOnIndex(currentIndex);
+        playSong(fileLink);
+    }
 }
