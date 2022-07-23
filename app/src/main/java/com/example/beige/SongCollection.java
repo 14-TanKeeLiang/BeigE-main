@@ -34,6 +34,16 @@ public class SongCollection {
     }
 
     public Song getCurrentSong(int currentSongId){
+
         return songs[currentSongId];
+    }
+
+    public int getNextSong(int currentSongIndex){
+        if(currentSongIndex >= songs.length-1){
+            return currentSongIndex;
+        }
+        else {
+            return currentSongIndex +1;
+        }
     }
 }
