@@ -40,7 +40,7 @@ public class SongCollection {
 
     public int getNextSong(int currentSongIndex){
         if(currentSongIndex >= songs.length-1){
-            return currentSongIndex;
+            return currentSongIndex = 0;
         }
         else {
             return currentSongIndex +1;

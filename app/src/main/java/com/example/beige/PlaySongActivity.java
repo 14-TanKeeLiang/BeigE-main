@@ -110,4 +110,10 @@ public class PlaySongActivity extends AppCompatActivity {
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        player.release();
+    }
 }
