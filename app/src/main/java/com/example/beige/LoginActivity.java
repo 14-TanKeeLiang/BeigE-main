@@ -3,14 +3,12 @@ package com.example.beige;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //The codes below is to create button functions for the buttons in the app work. In this case is the imagine button.
     ImageButton proceedBtn;
     ImageButton backBtn;
 
@@ -22,20 +20,19 @@ public class LoginActivity extends AppCompatActivity {
         proceedBtn = findViewById(R.id.proceedbtn);
         backBtn = findViewById(R.id.backbtn);
 
-        proceedBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
+        proceedBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, WelcomePage.class);
-                startActivity(intent);
-            }
-        });
+        backBtn.setOnClickListener(view -> onBackPressed());
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);
     }
 }

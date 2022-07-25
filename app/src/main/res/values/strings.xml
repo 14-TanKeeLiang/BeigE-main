@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">BeigE</string>
+    <string name="to_beige">To BeigE</string>
+    <string name="welcome">Welcome</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="todo">TODO</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="beige">BeigE</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="proceedbtn">proceedbtn</string>
+    <string name="backbtn">backbtn</string>
+    <string name="icon">icon</string>
+    <string name="playlistbtn">playlistbtn</string>
+    <string name="backgroundpopup">backgroundpopup</string>
+    <string name="homebtn">homebtn</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

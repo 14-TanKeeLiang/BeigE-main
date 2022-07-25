@@ -11,75 +11,69 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="BeigE"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/beige"
         android:textColor="@color/light_begie"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/backbtn"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        tools:ignore="TextContrastCheck" />
 
     <ImageButton
         android:id="@+id/backbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         android:background="@color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.204"
+        android:contentDescription="@string/backbtn"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/back_btn" />
+        app:srcCompat="@drawable/back_btn"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="264dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/segoe"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="@color/dark_grey"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/backbtn" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="306dp"
         android:layout_height="50sp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="53dp"
         android:layout_marginTop="34dp"
-        android:layout_marginEnd="53dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
         android:layout_width="306dp"
         android:layout_height="50sp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="53dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="53dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -87,27 +81,27 @@
         android:layout_height="50sp"
         android:layout_marginStart="53dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="53dp"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="@string/e_mail"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/editTextTextPassword3"
         android:layout_width="306dp"
         android:layout_height="50sp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="53dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="53dp"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        tools:ignore="TextContrastCheck" />
 
     <ImageButton
         android:id="@+id/proceedbtn"
@@ -116,11 +110,11 @@
         android:layout_marginStart="167dp"
         android:layout_marginTop="134dp"
         android:layout_marginEnd="168dp"
-        android:layout_marginBottom="94dp"
         android:background="@color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/proceedbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
-        app:srcCompat="@drawable/next_btn" />
+        app:srcCompat="@drawable/next_btn"
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

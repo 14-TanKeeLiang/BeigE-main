@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    //The codes below is to create button functions for the buttons in the app work. In this case is the imagine button.
     ImageButton proceedBtn;
     ImageButton backBtn;
 
@@ -20,20 +20,18 @@ public class SignUpActivity extends AppCompatActivity {
         proceedBtn = findViewById(R.id.proceedbtn);
         backBtn = findViewById(R.id.backbtn);
 
-        proceedBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
+        proceedBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
+            startActivity(intent);
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SignUpActivity.this, WelcomePage.class);
-                startActivity(intent);
-            }
-        });
+        backBtn.setOnClickListener(view -> onBackPressed());
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);
     }
 }

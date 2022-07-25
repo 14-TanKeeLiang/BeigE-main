@@ -15,5 +15,10 @@
 
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+    
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+
     </style>
 </resources>

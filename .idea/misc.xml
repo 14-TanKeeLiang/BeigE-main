@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/drawable/btn.xml" value="0.2985" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_play_song.xml" value="0.358695652173913" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_playlist.xml" value="0.33" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_profile.xml" value="0.33967391304347827" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_search.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_sign_up.xml" value="0.38697916666666665" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_welcome.xml" value="0.33" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/fragment_home.xml" value="0.33967391304347827" />
       </map>
     </option>
   </component>
@@ -17,5 +22,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.358695652173913" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -17,15 +17,16 @@
         android:layout_marginBottom="70dp"
         android:background="@drawable/btn"
         android:fontFamily="@font/segoe"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textColor="@color/dark_grey"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/loginbtn"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -38,7 +39,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon" />
+        app:srcCompat="@drawable/icon"
+        android:contentDescription="@string/icon" />
 
     <TextView
         android:id="@+id/textView"
@@ -47,13 +49,14 @@
         android:layout_marginStart="58dp"
         android:layout_marginEnd="104dp"
         android:fontFamily="@font/segoe"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:textColor="@color/light_begie"
-        android:textSize="60dp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView2"
@@ -62,13 +65,14 @@
         android:layout_marginStart="193dp"
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="50dp"
-        android:text="To BeigE"
+        android:text="@string/to_beige"
         android:textColor="@color/light_begie"
-        android:textSize="40dp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/loginbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginbtn"
@@ -79,13 +83,14 @@
         android:layout_marginEnd="140dp"
         android:background="@drawable/btn"
         android:fontFamily="@font/segoe"
-        android:text="Login"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textColor="@color/dark_grey"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/signupbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
