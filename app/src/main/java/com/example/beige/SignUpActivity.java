@@ -23,6 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
         proceedBtn.setOnClickListener(view -> {
             Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         });
 
         backBtn.setOnClickListener(view -> onBackPressed());

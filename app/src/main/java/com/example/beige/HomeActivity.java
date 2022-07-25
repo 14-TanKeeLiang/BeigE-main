@@ -27,29 +27,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        /*playlistBtn = findViewById(R.id.playlistbtn);
-        backGroundPopup = findViewById(R.id.backgroundpopup);
-
-        //This code below will help make transition of activity much smoother.
-        Fade fade = new Fade();
-        View decor = getWindow().getDecorView();
-        fade.excludeTarget(decor.findViewById(androidx.appcompat.R.id.action_bar_container),true);
-        fade.excludeTarget(android.R.id.statusBarBackground, true);
-        fade.excludeTarget(android.R.id.navigationBarBackground, true);
-
-        getWindow().setEnterTransition(fade);
-        getWindow().setExitTransition(fade);
-
-        playlistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, PlaylistActivity.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(HomeActivity.this, backGroundPopup, Objects.requireNonNull(ViewCompat.getTransitionName(backGroundPopup)));
-                startActivity(intent, options.toBundle());
-            }
-        });
-        */
     }
 
     SongCollection songCollection = new SongCollection();
