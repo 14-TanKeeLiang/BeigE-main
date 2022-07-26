@@ -4,17 +4,316 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homeFragment">
+    tools:context=".homeFragment"
+    tools:ignore="ExtraText">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="333dp"
-        android:fontFamily="@font/segoe"
-        android:text="@string/home"
-        android:textSize="50sp"
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            //Last Played
+            <TextView
+                android:id="@+id/last_played_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/last_played"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/seperators1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/saperators"
+                android:src="@drawable/saperators"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/last_played_txt"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/glimpse_of_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/transparent"
+                android:contentDescription="@string/joji"
+                android:onClick="handleSelection"
+                android:src="@drawable/joji_glimpse_of_us"
+                app:layout_constraintStart_toStartOf="@+id/seperators1"
+                app:layout_constraintTop_toBottomOf="@+id/seperators1" />
+
+            <ImageButton
+                android:id="@+id/feel_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:background="@color/transparent"
+                android:contentDescription="@string/twice"
+                android:onClick="handleSelection"
+                android:src="@drawable/twice"
+                app:layout_constraintStart_toEndOf="@id/glimpse_of_us"
+                app:layout_constraintTop_toTopOf="@+id/glimpse_of_us" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/glimpse_of_us"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/glimpse_of_us"
+                app:layout_constraintTop_toBottomOf="@+id/glimpse_of_us" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="21dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/Joji"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/textView13"
+                app:layout_constraintTop_toBottomOf="@id/textView13" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/feel_special"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/feel_special"
+                app:layout_constraintTop_toBottomOf="@+id/feel_special" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="34dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/Twice"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"
+                tools:ignore="SmallSp" />
+
+            //Favorite Songs
+            <TextView
+                android:id="@+id/favorite_songs"
+                android:layout_width="168dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/favorite_songs"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seperators1" />
+
+            <ImageView
+                android:id="@+id/seperators2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/saperators"
+                android:src="@drawable/saperators"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/favorite_songs"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/yoasobi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/transparent"
+                android:contentDescription="@string/yoasobi"
+                android:onClick="handleSelection"
+                android:src="@drawable/yoru_ni_kakeru"
+                app:layout_constraintStart_toStartOf="@+id/seperators2"
+                app:layout_constraintTop_toBottomOf="@+id/seperators2" />
+
+            <ImageButton
+                android:id="@+id/drake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:background="@color/transparent"
+                android:contentDescription="@string/drake"
+                android:onClick="handleSelection"
+                android:src="@drawable/drake"
+                app:layout_constraintStart_toEndOf="@+id/yoasobi"
+                app:layout_constraintTop_toTopOf="@+id/yoasobi" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/yoasobi_song"
+                app:layout_constraintStart_toStartOf="@+id/yoasobi"
+                app:layout_constraintTop_toBottomOf="@+id/yoasobi" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/yoasobi_name"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textView21"
+                app:layout_constraintTop_toBottomOf="@+id/textView21"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/nonstop"
+                app:layout_constraintStart_toStartOf="@+id/drake"
+                app:layout_constraintTop_toBottomOf="@+id/drake" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/Drake"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textView23"
+                app:layout_constraintTop_toBottomOf="@+id/textView23"
+                tools:ignore="SmallSp" />
+
+            //Albums
+            <TextView
+                android:id="@+id/seperators3"
+                android:layout_width="168dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="200dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/favorite_songs"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seperators2" />
+
+            <ImageView
+                android:id="@+id/seperators4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/saperators"
+                android:src="@drawable/saperators"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seperators3"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/weeknd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/transparent"
+                android:contentDescription="@string/weeknd"
+                android:onClick="handleSelection"
+                android:src="@drawable/weeknd"
+                app:layout_constraintStart_toStartOf="@+id/seperators4"
+                app:layout_constraintTop_toBottomOf="@+id/seperators4" />
+
+            <ImageButton
+                android:id="@+id/lil_uzi_vert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="55dp"
+                android:background="@color/transparent"
+                android:contentDescription="@string/drake"
+                android:onClick="handleSelection"
+                android:src="@drawable/lil_uzi_vert"
+                app:layout_constraintStart_toEndOf="@+id/weeknd"
+                app:layout_constraintTop_toTopOf="@+id/weeknd" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/blinding_lights"
+                app:layout_constraintStart_toStartOf="@+id/weeknd"
+                app:layout_constraintTop_toBottomOf="@+id/weeknd" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/yoasobi_name"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textView25"
+                app:layout_constraintTop_toBottomOf="@+id/textView25"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/nonstop"
+                app:layout_constraintStart_toStartOf="@+id/lil_uzi_vert"
+                app:layout_constraintTop_toBottomOf="@+id/lil_uzi_vert" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/Drake"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toBottomOf="@+id/textView26"
+                tools:ignore="SmallSp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

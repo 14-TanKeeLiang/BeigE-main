@@ -4,22 +4,22 @@ public class SongCollection {
 
     private Song songs[] = new Song[2];
     public SongCollection() {
-        Song theWayYouLookTonight = new Song("s1001",
-                "1. The Way You Look Tonight",
-                "Michael Buble",
-                "https://p.scdn.co/mp3-preview/a5b8972e764025020625bbf9c1c2bbb06e394a60?cid=2afe87a64b0042dabf51f37318616965",
-                4.66,
-                R.drawable.michael_buble_collection);
+        Song glimpseOfUs = new Song("glimpse_of_us",
+                "1. Glimpse Of Us",
+                "Joji",
+                "https://p.scdn.co/mp3-preview/071c22f355ed0d03fdc176dcb25a487f5ffb661c?cid=2afe87a64b0042dabf51f37318616965",
+                3.89,
+                R.drawable.joji_glimpse_of_us);
 
-        Song billieJean = new Song("s1002",
-                "2. Billie Jean",
-                "Michael Jackson",
-                "https://p.scdn.co/mp3-preview/71638a1eac196a5daa9fbf152693585e323d8558?cid=2afe87a64b0042dabf51f37318616965",
-                4.90,
-                R.drawable.billie_jean);
+        Song feelSpecial = new Song("feel_special",
+                "2. Feel Special",
+                "TWICE",
+                "https://p.scdn.co/mp3-preview/25e0099a6756e9faa060362211b003d72eadc655?cid=2afe87a64b0042dabf51f37318616965",
+                3.45,
+                R.drawable.twice);
 
-        songs[0] = theWayYouLookTonight;
-        songs[1] = billieJean;
+        songs[0] = glimpseOfUs;
+        songs[1] = feelSpecial;
     }
 
     public int searchSongById(String id){
