@@ -130,4 +130,15 @@
     </string>
     <string name="weeknd">weeknd</string>
     <string name="blinding_lights">Blinding Lights</string>
+    <string name="_20_min">20 Min</string>
+    <string name="lil_uzi_vert">Lil Uzi Vert</string>
+    <string name="bruno_mars">Bruno Mars</string>
+    <string name="the_kid_laroi">The Kid Laroi</string>
+    <string name="daily_mix">Daily Mix</string>
+    <string name="stay">Stay</string>
+    <string name="top_charts">Top Charts</string>
+    <string name="travis_scott">Travis Scott</string>
+    <string name="rich_minion">Rich Minion</string>
+    <string name="highest_in_the_room">HIGHEST IN THE ROOM</string>
+    <string name="yeat">Yeat</string>
 </resources>
