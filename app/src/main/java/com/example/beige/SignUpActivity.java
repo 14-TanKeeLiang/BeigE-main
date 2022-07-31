@@ -24,6 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
             Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            finish();
         });
 
         backBtn.setOnClickListener(view -> onBackPressed());
@@ -31,8 +32,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        Intent intent = new Intent(SignUpActivity.this, WelcomePage.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);
+        finish();
     }
 }

@@ -23,7 +23,8 @@ public class PlaySongActivity extends AppCompatActivity {
     private int currentIndex = -1;
 
     private MediaPlayer player = new MediaPlayer();
-    private Button btnPlayPause = null;
+    private ImageView btnPlayPause;
+    private ImageView btnBack;
     private SongCollection songCollection = new SongCollection();
 
     @Override
@@ -32,6 +33,8 @@ public class PlaySongActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_song);
 
         btnPlayPause = findViewById(R.id.btnPlayPause);
+        btnBack = findViewById(R.id.backbtn);
+
         Bundle songData = this.getIntent().getExtras();
         currentIndex = songData.getInt("index");
         Log.d("temasek", "we rx : " + currentIndex);
@@ -66,7 +69,7 @@ public class PlaySongActivity extends AppCompatActivity {
             player.setDataSource(songUrl);
             player.prepare();
             player.start();
-            btnPlayPause.setText("PAUSE");
+            btnPlayPause.setImageResource(R.drawable.pause_btn);
             setTitle(title);
             graceFullyStopWhenMusicEnds();
         }
@@ -79,11 +82,11 @@ public class PlaySongActivity extends AppCompatActivity {
     public void playOrPauseMusic(View view) {
         if(player.isPlaying()){
             player.pause();
-            btnPlayPause.setText("PLAY");
+            btnPlayPause.setImageResource(R.drawable.play_btn);
         }
         else {
             player.start();
-            btnPlayPause.setText("PAUSE");
+            btnPlayPause.setImageResource(R.drawable.pause_btn);
         }
     }
 
@@ -91,24 +94,25 @@ public class PlaySongActivity extends AppCompatActivity {
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                Toast.makeText(PlaySongActivity.this, "Song ended", Toast.LENGTH_SHORT).show();
-                btnPlayPause.setText("PLAY");
+                btnPlayPause.setImageResource(R.drawable.play_btn);
             }
         });
     }
 
     public void playNext(View view) {
         currentIndex = songCollection.getNextSong(currentIndex);
-        Toast.makeText(this, "The current index is now " + currentIndex, Toast.LENGTH_SHORT).show();
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
     }
 
     public void playPrevious(View view) {
         currentIndex = songCollection.getPrevSong(currentIndex);
-        Toast.makeText(this, "The current index is now " + currentIndex, Toast.LENGTH_SHORT).show();
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
+    }
+
+    public void backBtn(View view) {
+        onBackPressed();
     }
 
     @Override

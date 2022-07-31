@@ -141,4 +141,20 @@
     <string name="rich_minion">Rich Minion</string>
     <string name="highest_in_the_room">HIGHEST IN THE ROOM</string>
     <string name="yeat">Yeat</string>
+    <string name="settings">Settings</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="log_out">Log out</string>
+    <string name="song_title">Song Title</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="play">Play</string>
+    <string name="prev">PREV</string>
+    <string name="next">NEXT</string>
+    <string name="playpausebtn">PlayPauseBtn</string>
+    <string name="nextbtn">NextBtn</string>
+    <string name="prevbtn">PrevBtn</string>
+    <string name="artcover">ArtCover</string>
+    <string name="like">Like</string>
+    <string name="option">Option</string>
+    <string name="create_playlist">Create Playlist</string>
 </resources>

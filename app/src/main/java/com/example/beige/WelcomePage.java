@@ -25,12 +25,19 @@ public class WelcomePage extends AppCompatActivity {
             Intent intent = new Intent(WelcomePage.this, LoginActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            finish();
         });
 
         signUpBtn.setOnClickListener(view -> {
             Intent intent = new Intent(WelcomePage.this,SignUpActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+            finish();
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

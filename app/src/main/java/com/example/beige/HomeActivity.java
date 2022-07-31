@@ -1,34 +1,65 @@
 package com.example.beige;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.beige.databinding.ActivityHomeBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 
 public class HomeActivity extends AppCompatActivity {
 
-    ActivityHomeBinding binding;
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    BottomNavigationView bottomNavigationView;
+    SongCollection songCollection = new SongCollection();
+
+    ArrayList<Song> playList = new ArrayList<Song>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //I have to
         super.onCreate(savedInstanceState);
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_home);
 
-        //this code below is to set home screen to be seen everytime the user enters/login/signup the app.
+        //Setting up all the navigation functions
+        toolbar = findViewById(R.id.topToolBar);
+        setSupportActionBar(toolbar);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.drawer_navi_view);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+
+        //This code below is to set home screen to be seen everytime the user enters/login/signup the app.
         replaceFragment(new homeFragment());
 
-        //the function below is when user press any of the icons in the navigation bar it will prompt up the fragment that the icon is assigned to.
-        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+        //This code below is to have a ToolBar navigation on the header of the app and have a menu to open up the sidebar.
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,
+                R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        //The function below is when user press any of the icons in the bottom navigation bar it will prompt up the fragment that the icon is assigned to.
+        bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){
 
@@ -46,8 +77,29 @@ public class HomeActivity extends AppCompatActivity {
                     break;
 
             }
-
             return true;
+        });
+
+        //The function below is when user press any of the icons in the top navigation bar it will prompt up the fragment that the icon is assigned to.
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                switch (id){
+
+                    case R.id.settingFragment:
+                        break;
+
+                    case R.id.logout:
+                        onBackPressed();
+                        break;
+
+                    default:
+                        return true;
+                }
+                return true;
+            }
         });
     }
 
@@ -59,9 +111,31 @@ public class HomeActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+        builder.setMessage("Do you want to Log out?");
+        builder.setCancelable(false);
 
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(HomeActivity.this, WelcomePage.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);
+                finish();
+            }
+        });
 
-    SongCollection songCollection = new SongCollection();
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
     public void sendDataToActivity(int index){
         Intent intent = new Intent(this, PlaySongActivity.class);
@@ -77,4 +151,8 @@ public class HomeActivity extends AppCompatActivity {
         sendDataToActivity(currentArrayIndex);
     }
 
+    public void createPlaylist(View view){
+
+
+    }
 }
