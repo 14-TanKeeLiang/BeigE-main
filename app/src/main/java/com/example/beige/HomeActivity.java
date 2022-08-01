@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     SongCollection songCollection = new SongCollection();
 
-    ArrayList<Song> playList = new ArrayList<Song>();
+    static ArrayList<Song> playList = new ArrayList<Song>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,6 +151,7 @@ public class HomeActivity extends AppCompatActivity {
         sendDataToActivity(currentArrayIndex);
     }
 
+    //Bottom function is to create a playlist when user pressed
     public void createPlaylist(View view){
 
 
