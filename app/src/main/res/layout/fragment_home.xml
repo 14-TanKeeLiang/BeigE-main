@@ -49,7 +49,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageButton
-                android:id="@+id/glimpse_of_us"
+                android:id="@+id/joji"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/seperators1" />
 
             <ImageButton
-                android:id="@+id/feel_special"
+                android:id="@+id/twice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
@@ -70,52 +70,54 @@
                 android:contentDescription="@string/twice"
                 android:onClick="handleSelection"
                 android:src="@drawable/twice"
-                app:layout_constraintStart_toEndOf="@id/glimpse_of_us"
-                app:layout_constraintTop_toTopOf="@+id/glimpse_of_us" />
+                app:layout_constraintStart_toEndOf="@id/joji"
+                app:layout_constraintTop_toTopOf="@+id/joji" />
 
             <TextView
                 android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
+                android:textAlignment="center"
                 android:text="@string/glimpse_of_us"
                 android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="@+id/glimpse_of_us"
-                app:layout_constraintTop_toBottomOf="@+id/glimpse_of_us" />
+                app:layout_constraintStart_toStartOf="@+id/joji"
+                app:layout_constraintTop_toBottomOf="@+id/joji" />
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="21dp"
-                android:layout_height="18dp"
-                android:layout_marginStart="38dp"
+                android:layout_width="122dp"
+                android:layout_height="20dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/Joji"
+                android:textAlignment="center"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@id/textView13"
                 app:layout_constraintTop_toBottomOf="@id/textView13" />
 
             <TextView
                 android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/feel_special"
+                android:textAlignment="center"
                 android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="@+id/feel_special"
-                app:layout_constraintTop_toBottomOf="@+id/feel_special" />
+                app:layout_constraintStart_toStartOf="@+id/twice"
+                app:layout_constraintTop_toBottomOf="@+id/twice" />
 
             <TextView
                 android:id="@+id/textView16"
-                android:layout_width="34dp"
-                android:layout_height="14dp"
-                android:layout_marginStart="24dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/Twice"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView15"
                 app:layout_constraintTop_toBottomOf="@+id/textView15"
@@ -161,36 +163,38 @@
                 app:layout_constraintTop_toBottomOf="@+id/seperators2" />
 
             <ImageButton
-                android:id="@+id/drake"
+                android:id="@+id/baby_keem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
                 android:background="@color/transparent"
                 android:contentDescription="@string/drake"
                 android:onClick="handleSelection"
-                android:src="@drawable/drake"
+                android:src="@drawable/baby_keem"
                 app:layout_constraintStart_toEndOf="@+id/yoasobi"
                 app:layout_constraintTop_toTopOf="@+id/yoasobi" />
 
             <TextView
                 android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/yoasobi_song"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/yoasobi"
                 app:layout_constraintTop_toBottomOf="@+id/yoasobi" />
 
             <TextView
                 android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/yoasobi_name"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView21"
                 app:layout_constraintTop_toBottomOf="@+id/textView21"
@@ -198,29 +202,31 @@
 
             <TextView
                 android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
-                android:text="@string/nonstop"
-                app:layout_constraintStart_toStartOf="@+id/drake"
-                app:layout_constraintTop_toBottomOf="@+id/drake" />
+                android:text="@string/family_ties"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@+id/baby_keem"
+                app:layout_constraintTop_toBottomOf="@+id/baby_keem" />
+
+            //Albums
 
             <TextView
                 android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/segoe"
-                android:text="@string/Drake"
+                android:text="@string/baby_keem"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView23"
                 app:layout_constraintTop_toBottomOf="@+id/textView23"
                 tools:ignore="SmallSp" />
-
-            //Albums
 
             <TextView
                 android:id="@+id/albums"
@@ -247,7 +253,7 @@
                 tools:ignore="ImageContrastCheck" />
 
             <ImageButton
-                android:id="@+id/weeknd"
+                android:id="@+id/calvin_harris"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -255,7 +261,7 @@
                 android:background="@color/transparent"
                 android:contentDescription="@string/weeknd"
                 android:onClick="handleSelection"
-                android:src="@drawable/weeknd"
+                android:src="@drawable/calvin_harris"
                 app:layout_constraintStart_toStartOf="@+id/seperators3"
                 app:layout_constraintTop_toBottomOf="@+id/seperators3" />
 
@@ -268,28 +274,30 @@
                 android:contentDescription="@string/lil_uzi_vert"
                 android:onClick="handleSelection"
                 android:src="@drawable/lil_uzi_vert"
-                app:layout_constraintStart_toEndOf="@+id/weeknd"
-                app:layout_constraintTop_toTopOf="@+id/weeknd" />
+                app:layout_constraintStart_toEndOf="@+id/calvin_harris"
+                app:layout_constraintTop_toTopOf="@+id/calvin_harris" />
 
             <TextView
                 android:id="@+id/textView25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
-                android:text="@string/blinding_lights"
-                app:layout_constraintStart_toStartOf="@+id/weeknd"
-                app:layout_constraintTop_toBottomOf="@+id/weeknd" />
+                android:text="@string/feels"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@+id/calvin_harris"
+                app:layout_constraintTop_toBottomOf="@+id/calvin_harris" />
 
             <TextView
                 android:id="@+id/textView28"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/segoe"
-                android:text="@string/weeknd"
+                android:text="@string/calvin_harris"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView25"
                 app:layout_constraintTop_toBottomOf="@+id/textView25"
@@ -297,23 +305,25 @@
 
             <TextView
                 android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="42dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
-                android:text="@string/_20_min"
+                android:text="@string/xo_tour_lif3"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/lil_uzi_vert"
                 app:layout_constraintTop_toBottomOf="@+id/lil_uzi_vert" />
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-1dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/lil_uzi_vert"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView26"
                 app:layout_constraintTop_toBottomOf="@+id/textView26"
@@ -360,7 +370,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/seperators4" />
 
             <ImageButton
-                android:id="@+id/stay"
+                android:id="@+id/the_kid_loaroi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
@@ -373,23 +383,25 @@
 
             <TextView
                 android:id="@+id/textView30"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
-                android:text="@string/blinding_lights"
+                android:text="@string/that_s_what_i_like"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/bruno_mars"
                 app:layout_constraintTop_toBottomOf="@+id/bruno_mars" />
 
             <TextView
                 android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/bruno_mars"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView30"
                 app:layout_constraintTop_toBottomOf="@+id/textView30"
@@ -397,23 +409,25 @@
 
             <TextView
                 android:id="@+id/textView31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="46dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/stay"
-                app:layout_constraintStart_toStartOf="@+id/stay"
-                app:layout_constraintTop_toBottomOf="@+id/stay" />
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@+id/the_kid_loaroi"
+                app:layout_constraintTop_toBottomOf="@+id/the_kid_loaroi" />
 
             <TextView
                 android:id="@+id/textView32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-15dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/the_kid_laroi"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="@+id/textView31"
                 app:layout_constraintTop_toBottomOf="@+id/textView31"
@@ -460,7 +474,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/seperators5" />
 
             <ImageButton
-                android:id="@+id/highest_in_the_room"
+                android:id="@+id/travis_scott"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="55dp"
@@ -473,24 +487,26 @@
 
             <TextView
                 android:id="@+id/textView33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="26dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/rich_minion"
+                android:textAlignment="center"
                 app:layout_constraintStart_toStartOf="@+id/yeat"
                 app:layout_constraintTop_toBottomOf="@+id/yeat" />
 
             <TextView
                 android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/yeat"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView33"
@@ -505,18 +521,19 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/highest_in_the_room"
-                app:layout_constraintStart_toStartOf="@+id/highest_in_the_room"
-                app:layout_constraintTop_toBottomOf="@+id/highest_in_the_room" />
+                app:layout_constraintStart_toStartOf="@+id/travis_scott"
+                app:layout_constraintTop_toBottomOf="@+id/travis_scott" />
 
             <TextView
                 android:id="@+id/textView36"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
+                android:layout_width="122dp"
+                android:layout_height="20sp"
+                android:layout_marginStart="14dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/travis_scott"
+                android:textAlignment="center"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView35"
