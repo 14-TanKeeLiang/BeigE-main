@@ -152,8 +152,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     //Bottom function is to create a playlist when user pressed
-    public void createPlaylist(View view){
-
-
+    public void goToLikedPlaylist(View view){
+        for (int i = 0; i < PlaySongActivity.likedList.size(); i++) {
+            Log.d("like", PlaySongActivity.likedList.get(i).getTitle());
+        }
     }
 }
