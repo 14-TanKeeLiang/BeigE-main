@@ -12,10 +12,10 @@
         android:layout_width="320dp"
         android:layout_height="320dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/artcover"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:srcCompat="@drawable/twice" />
 
     <TextView
@@ -43,9 +43,9 @@
 
     <ImageView
         android:id="@+id/btnPlayPause"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
         android:contentDescription="@string/playpausebtn"
         android:onClick="playOrPauseMusic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,10 +56,10 @@
 
     <ImageView
         android:id="@+id/btnNext"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="97dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="120dp"
         android:contentDescription="@string/nextbtn"
         android:onClick="playNext"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,10 +68,10 @@
 
     <ImageView
         android:id="@+id/btnPrevious"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/prevbtn"
         android:onClick="playPrevious"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +114,30 @@
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/heart1_btn" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/segoe"
+        android:text="@string/now_playing"
+        android:textColor="@color/dark_grey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/saperators" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
