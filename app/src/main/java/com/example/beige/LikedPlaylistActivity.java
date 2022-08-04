@@ -1,25 +1,25 @@
 package com.example.beige;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+public class LikedPlaylistActivity extends AppCompatActivity {
 
-public class LikedPlaylistActivity extends RecyclerView.ViewHolder {
+    RecyclerView likeList;
+    SongAdapter songAdapter;
 
-    public TextView songTitle;
-    public TextView songArtist;
-    public ImageView songCoverImage;
-    public ImageView removeLike;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_liked_playlist);
 
-    public LikedPlaylistActivity(@NonNull View itemView) {
-        super(itemView);
+        likeList = findViewById(R.id.recycler_view);
+        songAdapter = new SongAdapter(PlaySongActivity.likedList);
+        likeList.setAdapter(songAdapter);
+        likeList.setLayoutManager(new LinearLayoutManager(this));
 
-        songTitle = itemView.findViewById(R.id.song_title);
-        songArtist = itemView.findViewById(R.id.song_artist);
-        songCoverImage = itemView.findViewById(R.id.song_cover_image);
-        removeLike = itemView.findViewById(R.id.remove_like);
     }
 }

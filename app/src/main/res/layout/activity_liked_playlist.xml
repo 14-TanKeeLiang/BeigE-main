@@ -54,45 +54,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back_btn" />
 
-    <ImageView
-        android:id="@+id/song_cover_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="14dp"
-        android:src="@drawable/baby_keem"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="360dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <TextView
-        android:id="@+id/song_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:text="@string/song_title"
-        android:textColor="@color/dark_grey"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/song_cover_image"
-        app:layout_constraintTop_toTopOf="@+id/song_cover_image" />
-
-    <TextView
-        android:id="@+id/song_artist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/artist_name"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/song_cover_image"
-        app:layout_constraintTop_toBottomOf="@+id/song_title" />
-
-    <ImageView
-        android:id="@+id/remove_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:src="@drawable/heart2_btn"
-        app:layout_constraintBottom_toBottomOf="@+id/song_cover_image"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

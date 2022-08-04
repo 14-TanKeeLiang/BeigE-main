@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class SongAdapter extends RecyclerView.Adapter<LikedPlaylistActivity> {
+public class SongAdapter extends RecyclerView.Adapter<LikedPlaylistView> {
 
     public SongAdapter(List<Song> songs) {
         this.songs = songs;
@@ -22,19 +22,19 @@ public class SongAdapter extends RecyclerView.Adapter<LikedPlaylistActivity> {
 
     @NonNull
     @Override
-    public LikedPlaylistActivity onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LikedPlaylistView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View songView = inflater.inflate(R.layout.activity_liked_playlist, parent, false);
 
-        LikedPlaylistActivity likedHolder = new LikedPlaylistActivity(songView);
+        LikedPlaylistView likedHolder = new LikedPlaylistView(songView);
 
         return likedHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LikedPlaylistActivity holder, int position) {
+    public void onBindViewHolder(@NonNull LikedPlaylistView holder, int position) {
         Song song = songs.get(position);
 
         TextView title = holder.songTitle;
@@ -49,6 +49,6 @@ public class SongAdapter extends RecyclerView.Adapter<LikedPlaylistActivity> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return songs.size();
     }
 }
