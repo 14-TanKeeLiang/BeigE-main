@@ -58,7 +58,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="15dp"
-                android:onClick="createPlaylist"
                 android:src="@drawable/plus_icon_for_playlist"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -71,7 +70,6 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/segoe"
                 android:text="@string/liked_playlist"
-                android:onClick="goToLikedPlaylist"
                 android:textColor="@color/dark_grey"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/likedSongBtn"
@@ -84,9 +82,27 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="25dp"
                 android:src="@drawable/heart2_btn"
-                android:onClick="goToLikedPlaylist"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/createPlaylistBtn" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="350dp"
+                android:layout_height="50sp"
+                android:onClick="goToLikedPlaylist"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/likedSongBtn"
+                app:layout_constraintTop_toTopOf="@+id/likedSongBtn" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="350dp"
+                android:layout_height="50sp"
+                android:layout_marginTop="1dp"
+                android:onClick="notFeatured"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/createPlaylistBtn"
+                app:layout_constraintTop_toTopOf="@+id/createPlaylistBtn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

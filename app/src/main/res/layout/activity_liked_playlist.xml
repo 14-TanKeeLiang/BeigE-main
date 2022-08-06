@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LikedPlaylistActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".LikedPlaylistActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -50,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="backBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/back_btn" />
@@ -57,11 +58,23 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="360dp"
-        android:layout_height="600dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="615dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+    <TextView
+        android:id="@+id/no_song_liked_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="237dp"
+        android:text="@string/there_are_no_liked_songs"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view"
+        app:layout_constraintTop_toTopOf="@+id/recycler_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

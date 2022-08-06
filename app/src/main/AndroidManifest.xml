@@ -16,8 +16,12 @@
         android:theme="@style/Theme.BeigE"
         tools:targetApi="31">
         <activity
-            android:name=".LikedPlaylistView"
+            android:name=".LikedPlaylistActivity"
             android:exported="false" />
+        <activity
+            android:name=".LikedPlaylistView"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />

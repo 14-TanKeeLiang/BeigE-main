@@ -63,7 +63,7 @@ public class SongCollection {
         Song intoTheNight = new Song("yoasobi",
                 "夜に駆ける",
                 "YOASOBI",
-                "https://p.scdn.co/mp3-preview/531b0319bc47673ac988e61bb15d51b9452fe841?cid=2afe87a64b0042dabf51f37318616965",
+                "https://p.scdn.co/mp3-preview/5ec6d2efbf3a412f1c2a4a8b728bb2ea0653fdb1?cid=2afe87a64b0042dabf51f37318616965",
                 4.37,
                 R.drawable.yoru_ni_kakeru);
 
@@ -88,13 +88,24 @@ public class SongCollection {
 
     public int searchSongById(String id){
 
-        for(int index = 0; index < songs.length; index++){
-            Song tempSong = songs[index];
-            if(tempSong.getId().equals(id)){
-                return index;
+        if(LikedPlaylistActivity.userInPlaylist == false){
+            for(int index = 0; index < songs.length; index++){
+                Song tempSong = songs[index];
+                if(tempSong.getId().equals(id)){
+                    return index;
+                }
             }
+            return -1;
         }
-        return -1;
+        else {
+            for(int index = 0; index < PlaySongActivity.likedList.size(); index++){
+                Song tempSong = songs[index];
+                if(tempSong.getId().equals(id)){
+                    return index;
+                }
+            }
+            return 0;
+        }
     }
 
     public Song getCurrentSong(int currentSongId){

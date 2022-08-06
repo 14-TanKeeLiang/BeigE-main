@@ -14,12 +14,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.beige.databinding.ActivityHomeBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -147,13 +145,16 @@ public class HomeActivity extends AppCompatActivity {
 
         String resourceId = getResources().getResourceEntryName(myView.getId());
         int currentArrayIndex = songCollection.searchSongById(resourceId);
-        Log.d("temaesk","The id of the pressed ImageButton is : " + currentArrayIndex);
         sendDataToActivity(currentArrayIndex);
     }
 
-    //Bottom function is to create a playlist when user pressed
     public void goToLikedPlaylist(View view){
         Intent intent = new Intent(this, LikedPlaylistActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+    }
+
+    public void notFeatured(View view){
+        Toast.makeText(this, "This feature have not been added.", Toast.LENGTH_SHORT).show();
     }
 }

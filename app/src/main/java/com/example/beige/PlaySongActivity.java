@@ -2,12 +2,14 @@ package com.example.beige;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,18 +24,21 @@ public class PlaySongActivity extends AppCompatActivity {
     public static int currentIndex = -1;
 
     //This section is for liked indicator 0 = not liked 1 = liked.
-    private static int joji = 0;
-    private static int twice = 0;
-    private static int babyKeem = 0;
-    private static int calvinHarris = 0;
-    private static int yeat = 0;
-    private static int lilUziVert = 0;
-    private static int brunoMars = 0;
-    private static int theKidLoaroi = 0;
-    private static int yoasobi = 0;
-    private static int travisScott = 0;
+    static int joji = 0;
+    static int twice = 0;
+    static int babyKeem = 0;
+    static int calvinHarris = 0;
+    static int yeat = 0;
+    static int lilUziVert = 0;
+    static int brunoMars = 0;
+    static int theKidLoaroi = 0;
+    static int yoasobi = 0;
+    static int travisScott = 0;
 
+    //This section is to create a liked song list array.
     static ArrayList<Song> likedList = new ArrayList<Song>();
+
+    SongAdapter songAdapter;
 
     private MediaPlayer player = new MediaPlayer();
     private ImageView btnPlayPause;
@@ -50,7 +55,6 @@ public class PlaySongActivity extends AppCompatActivity {
 
         Bundle songData = this.getIntent().getExtras();
         currentIndex = songData.getInt("index");
-        Log.d("temasek", "we rx : " + currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
         likedSongs();
@@ -128,6 +132,7 @@ public class PlaySongActivity extends AppCompatActivity {
     }
 
     //This on-Click function is to change the song like and unlike btn.
+    @SuppressLint("NotifyDataSetChanged")
     public void likeBtn(View view) {
 
         if(currentIndex == 0 && joji == 0){
@@ -190,45 +195,17 @@ public class PlaySongActivity extends AppCompatActivity {
             likedList.add(song);
             travisScott = 1;
         }
-        else if(currentIndex == 0 && joji == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            joji = 0;
-        }
-        else if(currentIndex == 1 && twice == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            twice = 0;
-        }
-        else if(currentIndex == 2 && babyKeem == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            babyKeem = 0;
-        }
-        else if(currentIndex == 3 && calvinHarris == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            calvinHarris = 0;
-        }
-        else if(currentIndex == 4 && yeat == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            yeat = 0;
-        }
-        else if(currentIndex == 5 && lilUziVert == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            lilUziVert = 0;
-        }
-        else if(currentIndex == 6 && brunoMars == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            brunoMars = 0;
-        }
-        else if(currentIndex == 7 && theKidLoaroi == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            theKidLoaroi = 0;
-        }
-        else if(currentIndex == 8 && yoasobi == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            yoasobi = 0;
-        }
-        else if(currentIndex == 9 && travisScott == 1){
-            likeBtn.setImageResource(R.drawable.heart1_btn);
-            travisScott = 0;
+        else if(currentIndex == 0 && joji == 1 ||
+                currentIndex == 1 && twice == 1 ||
+                currentIndex == 2 && babyKeem == 1 ||
+                currentIndex == 3 && calvinHarris == 1 ||
+                currentIndex == 4 && yeat == 1 ||
+                currentIndex == 5 && lilUziVert == 1 ||
+                currentIndex == 6 && brunoMars == 1 ||
+                currentIndex == 7 && theKidLoaroi == 1 ||
+                currentIndex == 8 && yoasobi == 1 ||
+                currentIndex == 9 && travisScott == 1){
+            Toast.makeText(this, "Please proceed to Like Playlist to remove song.", Toast.LENGTH_SHORT).show();
         }
     }
 
