@@ -3,14 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_about.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_home.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_liked_playlist.xml" value="0.4" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_liked_songs.xml" value="0.33967391304347827" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_main.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_play_song.xml" value="0.4" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_report_abug.xml" value="0.33967391304347827" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_search_view.xml" value="0.67" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_setting.xml" value="0.5" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_sleep_timer.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_songs_in_playlist.xml" value="0.5" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/activity_testing.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/fragment_home.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/fragment_playlist.xml" value="0.5" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/fragment_profile.xml" value="0.48215444516547695" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/fragment_search.xml" value="0.33" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/fragment_setting.xml" value="0.33967391304347827" />
+        <entry key="..\:/School/Poly/COMT/Projects/BeigE-main/app/src/main/res/layout/nav_header.xml" value="0.33967391304347827" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/drawable/btn.xml" value="0.2985" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_home.xml" value="0.358695652173913" />
         <entry key="..\:/School/Poly/COMT/Projects/BeigE/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
@@ -45,7 +55,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.358695652173913" />
+        <option name="scale" value="0.33967391304347827" />
       </ProjectState>
     </option>
   </component>

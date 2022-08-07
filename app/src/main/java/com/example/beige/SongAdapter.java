@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class SongAdapter extends RecyclerView.Adapter<LikedPlaylistView> {
+public class SongAdapter extends RecyclerView.Adapter<LikedPlaylistView>{
 
     public SongAdapter(List<Song> songs) {
         this.songs = songs;

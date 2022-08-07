@@ -167,4 +167,15 @@
     <string name="now_playing">Now Playing</string>
     <string name="textview">TextView</string>
     <string name="there_are_no_liked_songs">There are no liked songs.</string>
+    <string name="kee_liang">Kee Liang</string>
+    <string name="_0">0</string>
+    <string name="albums_profile">Albums:</string>
+    <string name="playlist_profile">Playlist:</string>
+    <string name="all_current_songs">All Current Songs</string>
+    <string name="tan_kee_liang">Tan Kee Liang</string>
+    <string name="about">About</string>
+    <string name="about_text1">This is BeigE, is it a basic music app with a simplistic layout.</string>
+    <string name="about_text2">All UIs have been done by Kee Liang, some of the UIs have been inspired from Spotify.</string>
+    <string name="report_a_bug">Report a Bug</string>
+    <string name="sleep_timer">Sleep Timer</string>
 </resources>

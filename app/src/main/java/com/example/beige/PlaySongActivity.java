@@ -38,8 +38,6 @@ public class PlaySongActivity extends AppCompatActivity {
     //This section is to create a liked song list array.
     static ArrayList<Song> likedList = new ArrayList<Song>();
 
-    SongAdapter songAdapter;
-
     private MediaPlayer player = new MediaPlayer();
     private ImageView btnPlayPause;
     private SongCollection songCollection = new SongCollection();
@@ -81,7 +79,6 @@ public class PlaySongActivity extends AppCompatActivity {
     }
 
     public void playSong(String songUrl){
-
         try {
             player.reset();
             player.setDataSource(songUrl);

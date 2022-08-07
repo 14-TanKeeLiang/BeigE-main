@@ -21,7 +21,6 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -31,8 +30,6 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     SongCollection songCollection = new SongCollection();
-
-    static ArrayList<Song> playList = new ArrayList<Song>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.drawer_navi_view);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
 
         //This code below is to set home screen to be seen everytime the user enters/login/signup the app.
         replaceFragment(new homeFragment());
@@ -63,15 +59,19 @@ public class HomeActivity extends AppCompatActivity {
 
                 case R.id.homeFragment:
                     replaceFragment(new homeFragment());
+                    LikedPlaylistActivity.userInPlaylist = false;
                     break;
                 case R.id.playlistFragment:
                     replaceFragment(new playlistFragment());
+                    LikedPlaylistActivity.userInPlaylist = false;
                     break;
                 case R.id.searchFragment:
                     replaceFragment(new searchFragment());
+                    LikedPlaylistActivity.userInPlaylist = true;
                     break;
                 case R.id.profileFragment:
                     replaceFragment(new profileFragment());
+                    LikedPlaylistActivity.userInPlaylist = false;
                     break;
 
             }
@@ -87,6 +87,9 @@ public class HomeActivity extends AppCompatActivity {
                 switch (id){
 
                     case R.id.settingFragment:
+                        Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                         break;
 
                     case R.id.logout:
@@ -99,6 +102,8 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        SongCollection.getSearchList();
     }
 
     //The method below is to replace the fragment when user taps on one of the icons at the bottom of the navigation bar.
@@ -109,6 +114,7 @@ public class HomeActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    //This section below is to logout user if they choose to do so.
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
@@ -118,6 +124,7 @@ public class HomeActivity extends AppCompatActivity {
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                SongCollection.getSearchListRemove();
                 Intent intent = new Intent(HomeActivity.this, WelcomePage.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);
@@ -135,12 +142,7 @@ public class HomeActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void sendDataToActivity(int index){
-        Intent intent = new Intent(this, PlaySongActivity.class);
-        intent.putExtra("index", index);
-        startActivity(intent);
-    }
-
+    //This section below is to bring user to the play song activity page.
     public void handleSelection(View myView){
 
         String resourceId = getResources().getResourceEntryName(myView.getId());
@@ -148,13 +150,23 @@ public class HomeActivity extends AppCompatActivity {
         sendDataToActivity(currentArrayIndex);
     }
 
+    public void sendDataToActivity(int index){
+        Intent intent = new Intent(this, PlaySongActivity.class);
+        intent.putExtra("index", index);
+        startActivity(intent);
+    }
+
+    //This section below is to bring user to the like playlist activity page.
     public void goToLikedPlaylist(View view){
         Intent intent = new Intent(this, LikedPlaylistActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 
+    //This section below is to tell user that this function has not been added.
     public void notFeatured(View view){
         Toast.makeText(this, "This feature have not been added.", Toast.LENGTH_SHORT).show();
     }
+
+
 }

@@ -56,7 +56,7 @@ public class LikedPlaylistActivity extends AppCompatActivity {
 
     public void handleSelection(View myView){
 
-        String resourceId = getResources().getResourceEntryName(myView.getId());
+        String resourceId = getResources().getResourceEntryName(likeList.getId());
         int currentArrayIndex = songCollection.searchSongById(resourceId);
         sendDataToActivity(currentArrayIndex);
     }

@@ -1,8 +1,13 @@
 package com.example.beige;
 
+import java.util.ArrayList;
+
 public class SongCollection {
 
-    private Song songs[] = new Song[10];
+    private static Song[] songs = new Song[10];
+
+    static ArrayList<Song> searchList = new ArrayList<Song>();
+
     public SongCollection() {
         Song glimpseOfUs = new Song("joji",
                 "Glimpse Of Us",
@@ -86,26 +91,41 @@ public class SongCollection {
         songs[9] = highestInTheRoom;
     }
 
+    public static void getSearchList() {
+        searchList.add(songs[0]);
+        searchList.add(songs[1]);
+        searchList.add(songs[2]);
+        searchList.add(songs[3]);
+        searchList.add(songs[4]);
+        searchList.add(songs[5]);
+        searchList.add(songs[6]);
+        searchList.add(songs[7]);
+        searchList.add(songs[8]);
+        searchList.add(songs[9]);
+    }
+
+    public static void getSearchListRemove() {
+        searchList.remove(songs[0]);
+        searchList.remove(songs[1]);
+        searchList.remove(songs[2]);
+        searchList.remove(songs[3]);
+        searchList.remove(songs[4]);
+        searchList.remove(songs[5]);
+        searchList.remove(songs[6]);
+        searchList.remove(songs[7]);
+        searchList.remove(songs[8]);
+        searchList.remove(songs[9]);
+    }
+
     public int searchSongById(String id){
 
-        if(LikedPlaylistActivity.userInPlaylist == false){
-            for(int index = 0; index < songs.length; index++){
-                Song tempSong = songs[index];
-                if(tempSong.getId().equals(id)){
-                    return index;
-                }
+        for(int index = 0; index < songs.length; index++){
+            Song tempSong = songs[index];
+            if(tempSong.getId().equals(id)){
+                return index;
             }
-            return -1;
         }
-        else {
-            for(int index = 0; index < PlaySongActivity.likedList.size(); index++){
-                Song tempSong = songs[index];
-                if(tempSong.getId().equals(id)){
-                    return index;
-                }
-            }
-            return 0;
-        }
+        return 0;
     }
 
     public Song getCurrentSong(int currentSongId){

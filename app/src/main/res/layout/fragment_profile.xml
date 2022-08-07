@@ -6,15 +6,546 @@
     android:layout_height="match_parent"
     tools:context=".profileFragment">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="333dp"
-        android:fontFamily="@font/segoe"
-        android:text="@string/profile"
-        android:textSize="50sp"
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="540dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="ExtraText">
+
+            //Profile
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/profile"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_seperators"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/profile_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+            //Username
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/segoe"
+                android:text="@string/tan_kee_liang"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_seperators"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            //Top Song
+
+            <ImageView
+                android:id="@+id/joji"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="25dp"
+                android:contentDescription="@string/joji"
+                android:onClick="handleSelection"
+                android:src="@drawable/joji_glimpse_of_us"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/albums_profile"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/joji"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/_0"
+                android:textColor="@color/dark_grey"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/playlist_profile"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/joji"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/_0"
+                android:textColor="@color/dark_grey"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            //All Current Songs
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/all_current_songs"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/joji" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_seperators"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+            //Twice
+
+            <ImageView
+                android:id="@+id/imageView27"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/twice"
+                app:layout_constraintStart_toEndOf="@+id/imageView14"
+                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView27" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/feel_special"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView27"
+                app:layout_constraintTop_toTopOf="@+id/imageView27" />
+
+            <ImageView
+                android:id="@+id/twice"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView27"
+                app:layout_constraintTop_toTopOf="@+id/imageView27" />
+
+            //yoasobi
+
+            <ImageView
+                android:id="@+id/imageView28"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/yoru_ni_kakeru"
+                app:layout_constraintStart_toEndOf="@+id/imageView15"
+                app:layout_constraintTop_toBottomOf="@+id/imageView27" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView28" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/yoasobi_song"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView28"
+                app:layout_constraintTop_toTopOf="@+id/imageView28" />
+
+            <ImageView
+                android:id="@+id/yoasobi"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView28"
+                app:layout_constraintTop_toTopOf="@+id/imageView28" />
+
+            //The Kid LOAROI
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/the_kid_laroi"
+                app:layout_constraintStart_toEndOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/stay"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView26"
+                app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+            <ImageView
+                android:id="@+id/the_kid_loaroi"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView26"
+                app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+            //Calvin Harris
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/calvin_harris"
+                app:layout_constraintStart_toEndOf="@+id/imageView17"
+                app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/feels"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView25"
+                app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+            <ImageView
+                android:id="@+id/calvin_harris"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView25"
+                app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+            //Baby Keem
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/baby_keem"
+                app:layout_constraintStart_toEndOf="@+id/imageView18"
+                app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/family_ties"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView24"
+                app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+            <ImageView
+                android:id="@+id/baby_keem"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView24"
+                app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+            //Lil Uzi Vert
+
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/lil_uzi_vert"
+                app:layout_constraintStart_toEndOf="@+id/imageView19"
+                app:layout_constraintTop_toBottomOf="@+id/imageView24" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView29" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/xo_tour_lif3"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView29"
+                app:layout_constraintTop_toTopOf="@+id/imageView29" />
+
+            <ImageView
+                android:id="@+id/lil_uzi_vert"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView29"
+                app:layout_constraintTop_toTopOf="@+id/imageView29" />
+
+            //Bruno Mars
+
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/bruno_mars"
+                app:layout_constraintStart_toEndOf="@+id/imageView20"
+                app:layout_constraintTop_toBottomOf="@+id/imageView29" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView30" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/that_s_what_i_like"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView30"
+                app:layout_constraintTop_toTopOf="@+id/imageView30" />
+
+            <ImageView
+                android:id="@+id/bruno_mars"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView30"
+                app:layout_constraintTop_toTopOf="@+id/imageView30" />
+
+            //Yeat
+
+            <ImageView
+                android:id="@+id/imageView31"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/yeat"
+                app:layout_constraintStart_toEndOf="@+id/imageView21"
+                app:layout_constraintTop_toBottomOf="@+id/imageView30" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView31" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/rich_minion"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView31"
+                app:layout_constraintTop_toTopOf="@+id/imageView31" />
+
+            <ImageView
+                android:id="@+id/yeat"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView31"
+                app:layout_constraintTop_toTopOf="@+id/imageView31" />
+
+            //Travis Scott
+
+            <ImageView
+                android:id="@+id/imageView32"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/travis_scott"
+                app:layout_constraintStart_toEndOf="@+id/imageView22"
+                app:layout_constraintTop_toBottomOf="@+id/imageView31" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pointer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView32" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/highest_in_the_room"
+                android:textColor="@color/dark_grey"
+                app:layout_constraintStart_toEndOf="@+id/imageView32"
+                app:layout_constraintTop_toTopOf="@+id/imageView32" />
+
+            <ImageView
+                android:id="@+id/travis_scott"
+                android:layout_width="315dp"
+                android:layout_height="50dp"
+                android:onClick="handleSelection"
+                android:src="@drawable/selection_area"
+                app:layout_constraintStart_toStartOf="@+id/imageView32"
+                app:layout_constraintTop_toTopOf="@+id/imageView32" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

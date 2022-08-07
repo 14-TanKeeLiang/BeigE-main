@@ -24,9 +24,4 @@
         android:name="com.example.beige.profileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/settingFragment"
-        android:name="com.example.beige.settingFragment"
-        android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
 </navigation>

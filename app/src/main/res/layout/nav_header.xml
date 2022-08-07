@@ -22,8 +22,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/segoe"
-        android:text="Tan Kee Liang"
-        android:textSize="20dp"
+        android:text="@string/tan_kee_liang"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilepic" />
 

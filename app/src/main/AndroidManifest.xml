@@ -16,6 +16,18 @@
         android:theme="@style/Theme.BeigE"
         tools:targetApi="31">
         <activity
+            android:name=".SleepTimerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportABugActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".LikedPlaylistActivity"
             android:exported="false" />
         <activity
