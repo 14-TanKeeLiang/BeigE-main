@@ -185,7 +185,7 @@ public class PlaySongActivity extends AppCompatActivity {
 
     //This function is to tell the user to reset their sleep timer in order to play their song.
     private void sleepTimerIsUp(){
-        if(SleepTimerActivity.timeLeftInMills <= 1000){
+        if(!SleepTimerActivity.timerRunning && SleepTimerActivity.timeLeftInMills <= 1000){
             player.pause();
             AlertDialog.Builder builder = new AlertDialog.Builder(PlaySongActivity.this);
             builder.setMessage("Your sleepTimer is up, go to reset the timer.");
@@ -351,6 +351,7 @@ public class PlaySongActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        handler.removeCallbacks(p_bar);
         super.onBackPressed();
         player.release();
     }

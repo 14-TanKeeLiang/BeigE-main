@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //The codes below is to create button functions for the buttons in the app work. In this case is the imagine button.
+    //The codes below is to create button & text functions for the buttons in the app work. In this case is the imagine button & edit text.
     ImageButton proceedBtn, backBtn;
     EditText email, password;
     TextView doNotHaveAccount;
@@ -34,20 +34,32 @@ public class LoginActivity extends AppCompatActivity {
 
             mail = email.getText().toString();
             pass = password.getText().toString();
-            if(mail.equals("")){
+            if(SignUpActivity.accountCreated){
+                if(mail.equals("2204887J@student.tp.edu.sg") &&
+                        pass.equals("123")){
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                    finish();
+                }
+                else {
+                    Toast.makeText(this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
+                    doNotHaveAccount.setVisibility(View.VISIBLE);
+                }
+            }
+            else if(mail.equals("")){
                 Toast.makeText(this, "Email field is blank.", Toast.LENGTH_SHORT).show();
                 doNotHaveAccount.setVisibility(View.VISIBLE);
             }
-
-            if(pass.equals("")){
+            else if(pass.equals("")){
                 Toast.makeText(this, "Password field is blank.", Toast.LENGTH_SHORT).show();
                 doNotHaveAccount.setVisibility(View.VISIBLE);
             }
+            else {
+                Toast.makeText(this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
+                doNotHaveAccount.setVisibility(View.VISIBLE);
+            }
 
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-            finish();
         });
 
         backBtn.setOnClickListener(view -> onBackPressed());

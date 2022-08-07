@@ -26,7 +26,8 @@ public class SleepTimerActivity extends AppCompatActivity {
     public static ImageView btnReset;
     @SuppressLint("StaticFieldLeak")
     public static EditText editTextInput;
-    public ImageView btnSet;
+    @SuppressLint("StaticFieldLeak")
+    public static ImageView btnSet;
 
     public static CountDownTimer countDownTimer;
 
@@ -157,6 +158,8 @@ public class SleepTimerActivity extends AppCompatActivity {
             btnReset.setVisibility(View.VISIBLE);
         }
         else if(timerRunning){
+            btnSet.setVisibility(View.INVISIBLE);
+            editTextInput.setVisibility(View.INVISIBLE);
             btnStartPause.setImageResource(R.drawable.sleep_timer_pause_btn);
         }
     }
