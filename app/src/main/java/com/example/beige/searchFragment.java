@@ -73,6 +73,7 @@ public class searchFragment extends Fragment {
         searchList.setAdapter(new SearchSongAdapter(SongCollection.searchList));
         searchList.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
+
         searchSongAdapter = new SearchSongAdapter(SongCollection.searchList);
         searchView = view.findViewById(R.id.search_view);
 
@@ -84,8 +85,8 @@ public class searchFragment extends Fragment {
             }
 
             @Override
-            public boolean onQueryTextChange(String s) {
-                searchSongAdapter.getFilter().filter(s);
+            public boolean onQueryTextChange(String text) {
+                searchSongAdapter.getFilter().filter(text);
                 return false;
             }
         });

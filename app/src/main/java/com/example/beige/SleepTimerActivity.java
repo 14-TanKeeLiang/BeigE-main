@@ -18,18 +18,18 @@ public class SleepTimerActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLS = 8000;
 
     @SuppressLint("StaticFieldLeak")
-    private static TextView textViewCountDown;
+    public static TextView textViewCountDown;
     @SuppressLint("StaticFieldLeak")
-    private static ImageView btnStartPause;
+    public static ImageView btnStartPause;
     @SuppressLint("StaticFieldLeak")
-    private static ImageView btnReset;
+    public static ImageView btnReset;
 
-    private static CountDownTimer countDownTimer;
+    public static CountDownTimer countDownTimer;
 
-    private static boolean timerRunning;
-    private static boolean outOfPage;
+    public static boolean timerRunning;
+    public static boolean outOfPage;
 
-    private static long timeLeftInMills = START_TIME_IN_MILLS;
+    public static long timeLeftInMills = START_TIME_IN_MILLS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +126,6 @@ public class SleepTimerActivity extends AppCompatActivity {
 
     public void backBtn(View view) {
         onBackPressed();
-        Log.d("timer", "backBtn: " + timerRunning);
     }
 
     @Override

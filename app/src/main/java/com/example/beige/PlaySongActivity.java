@@ -1,13 +1,19 @@
 package com.example.beige;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +45,11 @@ public class PlaySongActivity extends AppCompatActivity {
     static ArrayList<Song> likedList = new ArrayList<Song>();
 
     private MediaPlayer player = new MediaPlayer();
-    private ImageView btnPlayPause;
     private SongCollection songCollection = new SongCollection();
+    private ImageView btnPlayPause;
     private ImageView likeBtn;
+    SeekBar seekBar;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +58,45 @@ public class PlaySongActivity extends AppCompatActivity {
 
         likeBtn = findViewById(R.id.liked_song_btn);
         btnPlayPause = findViewById(R.id.btnPlayPause);
+        seekBar = findViewById(R.id.seekBar);
 
         Bundle songData = this.getIntent().getExtras();
         currentIndex = songData.getInt("index");
+
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
         likedSongs();
+        sleepTimerIsUp();
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                if(player != null && player.isPlaying()){
+                    player.seekTo(seekBar.getProgress());
+                }
+            }
+        });
     }
+
+    Runnable p_bar = new Runnable() {
+        @Override
+        public void run() {
+            if(player != null && player.isPlaying()){
+                seekBar.setProgress(player.getCurrentPosition());
+                handler.postDelayed(this, 1000);
+            }
+        }
+    };
 
     public void displaySongBasedOnIndex(int selectedIndex){
         Song song = songCollection.getCurrentSong(selectedIndex);
@@ -84,6 +124,9 @@ public class PlaySongActivity extends AppCompatActivity {
             player.setDataSource(songUrl);
             player.prepare();
             player.start();
+            seekBar.setMax(player.getDuration());
+            handler.removeCallbacks(p_bar);
+            handler.postDelayed(p_bar, 1000);
             btnPlayPause.setImageResource(R.drawable.pause_btn);
             setTitle(title);
             graceFullyStopWhenMusicEnds();
@@ -91,16 +134,20 @@ public class PlaySongActivity extends AppCompatActivity {
         catch (IOException e){
             e.printStackTrace();
         }
-
     }
 
     public void playOrPauseMusic(View view) {
         if(player.isPlaying()){
+            sleepTimerIsUp();
             player.pause();
+            handler.removeCallbacks(p_bar);
             btnPlayPause.setImageResource(R.drawable.play_btn);
         }
         else {
+            sleepTimerIsUp();
             player.start();
+            handler.removeCallbacks(p_bar);
+            handler.postDelayed(p_bar, 1000);
             btnPlayPause.setImageResource(R.drawable.pause_btn);
         }
     }
@@ -114,7 +161,26 @@ public class PlaySongActivity extends AppCompatActivity {
         });
     }
 
+    private void sleepTimerIsUp(){
+        if(SleepTimerActivity.timeLeftInMills <= 1000){
+            player.pause();
+            AlertDialog.Builder builder = new AlertDialog.Builder(PlaySongActivity.this);
+            builder.setMessage("Your sleepTimer is up, go to reset the timer.");
+            builder.setCancelable(false);
+
+            builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    onBackPressed();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
+    }
+
     public void playNext(View view) {
+        sleepTimerIsUp();
         currentIndex = songCollection.getNextSong(currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
@@ -122,6 +188,7 @@ public class PlaySongActivity extends AppCompatActivity {
     }
 
     public void playPrevious(View view) {
+        sleepTimerIsUp();
         currentIndex = songCollection.getPrevSong(currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);

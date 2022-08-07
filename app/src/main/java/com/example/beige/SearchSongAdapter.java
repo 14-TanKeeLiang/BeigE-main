@@ -57,13 +57,12 @@ public class SearchSongAdapter extends RecyclerView.Adapter<SearchViewActivity> 
     }
 
     @Override
-    public int getItemCount() {
-        return songsFiltered.size();
-    }
+    public int getItemCount() {return songsFiltered.size();}
 
     @Override
     public Filter getFilter() {
         return new Filter() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
 
@@ -83,6 +82,7 @@ public class SearchSongAdapter extends RecyclerView.Adapter<SearchViewActivity> 
 
                 FilterResults filterResults = new FilterResults();
                 filterResults.values = songsFiltered;
+                notifyDataSetChanged();
                 return filterResults;
             }
 

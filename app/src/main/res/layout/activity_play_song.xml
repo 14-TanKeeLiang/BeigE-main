@@ -139,5 +139,29 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         app:srcCompat="@drawable/saperators" />
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="278dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="2dp"
+        android:progress="30"
+        android:progressBackgroundTint="@color/dark_grey"
+        android:progressTint="@color/dark_beige"
+        android:thumbTint="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtArtist" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNext"
+        app:layout_constraintTop_toTopOf="@+id/btnNext"
+        app:srcCompat="@drawable/repeat_off" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
