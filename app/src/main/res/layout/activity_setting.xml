@@ -69,11 +69,12 @@
         app:srcCompat="@drawable/main_seperators" />
 
     //Sleep Timer
+
     <TextView
         android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/segoe"
         android:text="@string/sleep_timer"
@@ -87,10 +88,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView51"
-        app:srcCompat="@drawable/about" />
+        app:srcCompat="@drawable/sleep_timer_icon" />
 
     <ImageView
         android:id="@+id/imageView35"

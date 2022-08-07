@@ -25,7 +25,7 @@ public class SearchSongAdapter extends RecyclerView.Adapter<SearchViewActivity> 
         this.songsFiltered = songs;
     }
 
-    private List<Song> songs;
+    private final List<Song> songs;
     private List<Song> songsFiltered;
     Context context;
 

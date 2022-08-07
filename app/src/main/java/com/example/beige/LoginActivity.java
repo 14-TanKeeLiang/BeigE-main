@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
     //The codes below is to create button functions for the buttons in the app work. In this case is the imagine button.
-    ImageButton proceedBtn;
-    ImageButton backBtn;
+    ImageButton proceedBtn, backBtn;
+    EditText email, password;
+    TextView doNotHaveAccount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +25,25 @@ public class LoginActivity extends AppCompatActivity {
 
         proceedBtn = findViewById(R.id.proceedbtn);
         backBtn = findViewById(R.id.backbtn);
+        email = findViewById(R.id.editTextTextEmailAddress);
+        password = findViewById(R.id.editTextTextPassword);
+        doNotHaveAccount = findViewById(R.id.dont_have_account);
 
         proceedBtn.setOnClickListener(view -> {
+            String mail, pass;
+
+            mail = email.getText().toString();
+            pass = password.getText().toString();
+            if(mail.equals("")){
+                Toast.makeText(this, "Email field is blank.", Toast.LENGTH_SHORT).show();
+                doNotHaveAccount.setVisibility(View.VISIBLE);
+            }
+
+            if(pass.equals("")){
+                Toast.makeText(this, "Password field is blank.", Toast.LENGTH_SHORT).show();
+                doNotHaveAccount.setVisibility(View.VISIBLE);
+            }
+
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
@@ -35,6 +58,14 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, WelcomePage.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);
+        finish();
+    }
+
+    //This on-Click function is to go to the signup page.
+    public void goToSignUpPage(View view) {
+        Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         finish();
     }
 }

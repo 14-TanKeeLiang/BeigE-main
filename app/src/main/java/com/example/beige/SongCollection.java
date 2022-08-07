@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class SongCollection {
 
-    private static Song[] songs = new Song[10];
+    public Song[] songs = new Song[10];
 
-    static ArrayList<Song> searchList = new ArrayList<Song>();
+    public static ArrayList<Song> searchList = new ArrayList<Song>();
 
     public SongCollection() {
         Song glimpseOfUs = new Song("joji",
@@ -91,7 +91,7 @@ public class SongCollection {
         songs[9] = highestInTheRoom;
     }
 
-    public static void getSearchList() {
+    public void getSearchList() {
         searchList.add(songs[0]);
         searchList.add(songs[1]);
         searchList.add(songs[2]);
@@ -104,7 +104,7 @@ public class SongCollection {
         searchList.add(songs[9]);
     }
 
-    public static void getSearchListRemove() {
+    public void getSearchListRemove() {
         searchList.remove(songs[0]);
         searchList.remove(songs[1]);
         searchList.remove(songs[2]);

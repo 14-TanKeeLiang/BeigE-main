@@ -29,10 +29,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/backbtn"
         android:onClick="backBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_btn" />
+        app:srcCompat="@drawable/back_btn"
+        tools:ignore="TouchTargetSizeCheck" />
 
     //Sleep Timer
 
@@ -72,19 +74,110 @@
 
     //Timer
 
+    <EditText
+        android:id="@+id/countdown_timer_edit"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="127dp"
+        android:hint="@string/minutes"
+        android:inputType="number"
+        android:maxLength="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <ImageView
+        android:id="@+id/btn_edit_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toEndOf="@+id/countdown_timer_edit"
+        app:layout_constraintTop_toTopOf="@+id/countdown_timer_edit"
+        app:srcCompat="@drawable/sleep_timer_set_btn" />
+
     <TextView
         android:id="@+id/countdown_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
         android:fontFamily="@font/segoe"
-        android:text="00:00"
+        android:text="@string/_00_00_00"
         android:textColor="@color/dark_grey"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintTop_toBottomOf="@+id/countdown_timer_edit" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="96dp"
+        android:fontFamily="@font/segoe"
+        android:text="@string/seconds"
+        android:textAlignment="center"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countdown_timer" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="60sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="@font/segoe"
+        android:text="@string/minutes"
+        android:textAlignment="center"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toStartOf="@+id/textView52"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView54"
+        app:layout_constraintTop_toBottomOf="@+id/countdown_timer" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:fontFamily="@font/segoe"
+        android:text="@string/hours"
+        android:textAlignment="center"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countdown_timer" />
+
+    <ImageView
+        android:id="@+id/imageView37"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="-5dp"
+        app:layout_constraintEnd_toEndOf="@+id/countdown_timer"
+        app:layout_constraintTop_toTopOf="@+id/countdown_timer"
+        app:srcCompat="@drawable/sleep_timer_seperators" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="63dp"
+        app:layout_constraintStart_toStartOf="@+id/countdown_timer"
+        app:layout_constraintTop_toTopOf="@+id/countdown_timer"
+        app:srcCompat="@drawable/sleep_timer_seperators" />
+
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView37"
+        app:layout_constraintStart_toEndOf="@+id/imageView38"
+        app:layout_constraintTop_toTopOf="@+id/countdown_timer"
+        app:srcCompat="@drawable/sleep_timer_seperators" />
 
     <ImageView
         android:id="@+id/btn_start_pause"
@@ -101,11 +194,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_start_pause"
         app:srcCompat="@drawable/sleep_timer_reset_btn"
-        android:visibility="invisible"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

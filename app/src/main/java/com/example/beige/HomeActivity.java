@@ -103,7 +103,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        SongCollection.getSearchList();
+        songCollection.getSearchList();
     }
 
     //The method below is to replace the fragment when user taps on one of the icons at the bottom of the navigation bar.
@@ -124,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                SongCollection.getSearchListRemove();
+                songCollection.getSearchListRemove();
                 Intent intent = new Intent(HomeActivity.this, WelcomePage.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_from_left, R.anim.side_to_right);

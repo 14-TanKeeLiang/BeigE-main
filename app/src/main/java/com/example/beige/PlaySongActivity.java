@@ -19,14 +19,20 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class PlaySongActivity extends AppCompatActivity {
 
     private String title;
-    private String artiste;
+    public String artiste;
     private String fileLink;
+    private boolean repeatFlag = false;
+    private boolean shuffleFlag = false;
     private double songLength;
-    private int drawable;
+    public int drawable;
     public static int currentIndex = -1;
 
     //This section is for liked indicator 0 = not liked 1 = liked.
@@ -41,15 +47,19 @@ public class PlaySongActivity extends AppCompatActivity {
     static int yoasobi = 0;
     static int travisScott = 0;
 
-    //This section is to create a liked song list array.
-    static ArrayList<Song> likedList = new ArrayList<Song>();
-
-    private MediaPlayer player = new MediaPlayer();
-    private SongCollection songCollection = new SongCollection();
+    public MediaPlayer player = new MediaPlayer();
+    public SongCollection songCollection = new SongCollection();
+    public SongCollection originalSongCollection = new SongCollection();
     private ImageView btnPlayPause;
     private ImageView likeBtn;
+    private ImageView repeatBtn;
+    private ImageView shuffleBtn;
     SeekBar seekBar;
     Handler handler = new Handler();
+
+    //This section is to create list arrays.
+    static ArrayList<Song> likedList = new ArrayList<Song>();
+    List<Song> shuffleList = Arrays.asList(songCollection.songs);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +68,8 @@ public class PlaySongActivity extends AppCompatActivity {
 
         likeBtn = findViewById(R.id.liked_song_btn);
         btnPlayPause = findViewById(R.id.btnPlayPause);
+        repeatBtn = findViewById(R.id.btnRepeat);
+        shuffleBtn = findViewById(R.id.btnShuffle);
         seekBar = findViewById(R.id.seekBar);
 
         Bundle songData = this.getIntent().getExtras();
@@ -88,6 +100,7 @@ public class PlaySongActivity extends AppCompatActivity {
         });
     }
 
+    //This function is to have a loop timer for the seekbar.
     Runnable p_bar = new Runnable() {
         @Override
         public void run() {
@@ -98,6 +111,7 @@ public class PlaySongActivity extends AppCompatActivity {
         }
     };
 
+    //This function is to set the UIs in the activity.
     public void displaySongBasedOnIndex(int selectedIndex){
         Song song = songCollection.getCurrentSong(selectedIndex);
 
@@ -118,6 +132,7 @@ public class PlaySongActivity extends AppCompatActivity {
         iCoverArt.setImageResource(drawable);
     }
 
+    //This function is to play the current song.
     public void playSong(String songUrl){
         try {
             player.reset();
@@ -136,6 +151,7 @@ public class PlaySongActivity extends AppCompatActivity {
         }
     }
 
+    //This on-Click function is to play or pause the current song.
     public void playOrPauseMusic(View view) {
         if(player.isPlaying()){
             sleepTimerIsUp();
@@ -152,15 +168,22 @@ public class PlaySongActivity extends AppCompatActivity {
         }
     }
 
+    //This function is to stop the stop the song when it reaches to the end.
     private void graceFullyStopWhenMusicEnds(){
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                btnPlayPause.setImageResource(R.drawable.play_btn);
+                if(repeatFlag){
+                    playOrPauseMusic(null);
+                }
+                else {
+                    btnPlayPause.setImageResource(R.drawable.play_btn);
+                }
             }
         });
     }
 
+    //This function is to tell the user to reset their sleep timer in order to play their song.
     private void sleepTimerIsUp(){
         if(SleepTimerActivity.timeLeftInMills <= 1000){
             player.pause();
@@ -179,6 +202,7 @@ public class PlaySongActivity extends AppCompatActivity {
         }
     }
 
+    //This on-Click function is to go to the next song.
     public void playNext(View view) {
         sleepTimerIsUp();
         currentIndex = songCollection.getNextSong(currentIndex);
@@ -187,12 +211,41 @@ public class PlaySongActivity extends AppCompatActivity {
         likedSongs();
     }
 
+    //This on-Click function is to go to the previous song.
     public void playPrevious(View view) {
         sleepTimerIsUp();
         currentIndex = songCollection.getPrevSong(currentIndex);
         displaySongBasedOnIndex(currentIndex);
         playSong(fileLink);
         likedSongs();
+    }
+
+    //This on-Click function is to repeat the song.
+    public void repeatSong(View view) {
+        if(repeatFlag)
+        {
+            repeatBtn.setImageResource(R.drawable.repeat_off);
+        }
+        else
+        {
+            repeatBtn.setImageResource(R.drawable.repeat_on);
+        }
+        repeatFlag = !repeatFlag;
+    }
+
+    public void shuffleSong(View view) {
+        if(shuffleFlag)
+        {
+            shuffleBtn.setImageResource(R.drawable.shuffle_off);
+            songCollection = new SongCollection();
+        }
+        else
+        {
+            shuffleBtn.setImageResource(R.drawable.shuffle_on);
+            Collections.shuffle(shuffleList);
+            shuffleList.toArray(songCollection.songs);
+        }
+        shuffleFlag = !shuffleFlag;
     }
 
     //This on-Click function is to change the song like and unlike btn.

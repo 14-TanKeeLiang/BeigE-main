@@ -178,4 +178,13 @@
     <string name="about_text2">All UIs have been done by Kee Liang, some of the UIs have been inspired from Spotify.</string>
     <string name="report_a_bug">Report a Bug</string>
     <string name="sleep_timer">Sleep Timer</string>
+    <string name="minutes">Minutes</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="seconds">Seconds</string>
+    <string name="hours">Hours</string>
+    <string name="report_a_bug_text">This app is in alpha version, users will encounter some bugs/errors.</string>
+    <string name="report_a_bug_text2">In-order to help improve this app, users can write down their findings of bugs/errors in the box below.</string>
+    <string name="feedback">Feedback</string>
+    <string name="enter_your_feedback">Enter Your Feedback</string>
+    <string name="you_do_not_have_an_account">You do not have an account?</string>
 </resources>

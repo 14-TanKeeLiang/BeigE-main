@@ -22,7 +22,7 @@
         android:id="@+id/txtSongTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/song_title"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -45,13 +45,13 @@
         android:id="@+id/btnPlayPause"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:contentDescription="@string/playpausebtn"
         android:onClick="playOrPauseMusic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtArtist"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
         app:srcCompat="@drawable/play_btn" />
 
     <ImageView
@@ -143,7 +143,7 @@
         android:id="@+id/seekBar"
         android:layout_width="278dp"
         android:layout_height="26dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:progress="30"
         android:progressBackgroundTint="@color/dark_grey"
         android:progressTint="@color/dark_beige"
@@ -154,14 +154,26 @@
         app:layout_constraintTop_toBottomOf="@+id/txtArtist" />
 
     <ImageView
-        android:id="@+id/imageView36"
+        android:id="@+id/btnRepeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="repeatSong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnNext"
         app:layout_constraintTop_toTopOf="@+id/btnNext"
         app:srcCompat="@drawable/repeat_off" />
+
+    <ImageView
+        android:id="@+id/btnShuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="shuffleSong"
+        app:layout_constraintEnd_toStartOf="@+id/btnPrevious"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPrevious"
+        app:srcCompat="@drawable/shuffle_off" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
